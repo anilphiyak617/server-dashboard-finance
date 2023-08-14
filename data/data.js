@@ -1,4 +1,4 @@
-export const kpis = [
+export const kpis_data = [
   {
     _id: "63bf8239f03239e002001612",
     totalProfit: "$212000.00",
@@ -203,7 +203,7 @@ export const kpis = [
       { date: "2022-04-21", revenue: "$545.95", expenses: "$450.46" },
       { date: "2022-04-22", revenue: "$925.01", expenses: "$588.16" },
       { date: "2022-04-23", revenue: "$840.44", expenses: "$324.07" },
-      { date: "2022-04-24", revenue: "$799.81", expenses: "$320.28" },
+      { date: "2022-04-24", revenue: "$799.ff81", expenses: "$320.28" },
       { date: "2022-04-25", revenue: "$1108.47", expenses: "$330.84" },
       { date: "2022-04-26", revenue: "$572.72", expenses: "$605.23" },
       { date: "2022-04-27", revenue: "$1416.82", expenses: "$746.86" },
@@ -465,7 +465,7 @@ export const kpis = [
   },
 ];
 
-export const products = [
+export const products_data = [
   {
     _id: "63bf7ac9f03239e002001600",
     price: "$43.41",
@@ -1606,7 +1606,7 @@ export const products = [
   },
 ];
 
-export const transactions = [
+export const transactions_data = [
   {
     _id: "63bf7ccef03239e002001606",
     amount: "$154.37",
