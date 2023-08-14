@@ -4,7 +4,7 @@ Welcome to the Server Dashboard for Finance Data repository! This project provid
 
 ## Directory Structure
 
-server-dashboard-finance/
+```server-dashboard-finance/
 ├── data/
 │ └── data.js
 ├── index.js
@@ -19,6 +19,7 @@ server-dashboard-finance/
 │ ├── products.js
 │ └── transactions.js
 └── yarn.lock
+```
 
 - `data/`: Contains data-related files.
 
