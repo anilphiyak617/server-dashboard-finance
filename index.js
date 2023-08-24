@@ -4,7 +4,9 @@ import cors from "cors";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import helmet from "helmet";
-import kpiRoutes from "./routes/kpi.js";
+import kpiRoutes from "./routes/kpiRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
+import transactionRoutes from "./routes/transactionRoutes.js";
 import KPI from "./models/KPI.js";
 import { kpis_data, products_data, transactions_data } from "./data/data.js";
 import Transaction from "./models/Transaction.js";
@@ -24,11 +26,13 @@ app.use(
 // used for logging Request logs
 app.use(morgan("common"));
 // for cross origin resource sharing i.e accessing from any other system
-// app.use(cors);
+app.use(cors());
 
 /* ROUTES */
 app.get("/", (req, res) => res.json("This is the Base route"));
 app.use("/kpi", kpiRoutes);
+app.use("/product", productRoutes);
+app.use("/transactions", transactionRoutes);
 
 /* MONGOOSE */
 const PORT = process.env.PORT;

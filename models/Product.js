@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
+import { model } from "mongoose";
 import { loadType } from "mongoose-currency";
 
 const Schema = mongoose.Schema;
+// loading mongooes-currenc type into mongoose.Types
 loadType(mongoose);
 
 const ProductSchema = new Schema(
@@ -19,13 +21,13 @@ const ProductSchema = new Schema(
     transactions: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Transaction",
+        // ref: "Transaction",
       },
     ],
   },
   { timestamps: true, toJSON: { getters: true } }
 );
 
-const Product = mongoose.model("Product", ProductSchema);
+const Product = model("Product", ProductSchema);
 
 export default Product;
