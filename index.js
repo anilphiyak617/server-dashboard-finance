@@ -27,7 +27,10 @@ app.use(
 app.use(morgan("common"));
 // for cross origin resource sharing i.e accessing from any other system
 const corsOptions = {
-  origin: "http://localhost:5173", // Replace with your React app's URL
+  origin: [
+    "https://dashboard-finance-paw6kbrob-akacoder007.vercel.app",
+    "http://localhost:5173",
+  ], // Replace with your React app's URL
   credentials: true, // Allow cookies and headers
 };
 
