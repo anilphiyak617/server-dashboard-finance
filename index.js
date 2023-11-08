@@ -29,6 +29,7 @@ app.use(morgan("common"));
 const corsOptions = {
   origin: [
     "https://dashboard-finance-paw6kbrob-akacoder007.vercel.app",
+    "https://dashboard-finance-three.vercel.app",
     "http://localhost:5173",
   ], // Replace with your React app's URL
   credentials: true, // Allow cookies and headers
