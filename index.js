@@ -8,9 +8,9 @@ import kpiRoutes from "./routes/kpiRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import transactionRoutes from "./routes/transactionRoutes.js";
 import KPI from "./models/KPI.js";
-import { kpis_data, products_data, transactions_data } from "./data/data.js";
-import Transaction from "./models/Transaction.js";
+import { kpis_data, transactions_data, products_data } from "./data/data.js";
 import Product from "./models/Product.js";
+import Transaction from "./models/Transaction.js";
 
 /* CONFIGURATIONS */
 // reads .env file and setups the environtment variables in the process.env object
@@ -26,16 +26,20 @@ app.use(
 // used for logging Request logs
 app.use(morgan("common"));
 // for cross origin resource sharing i.e accessing from any other system
-app.use(cors());
+const corsOptions = {
+  origin: "http://localhost:5173", // Replace with your React app's URL
+  credentials: true, // Allow cookies and headers
+};
 
+app.use(cors(corsOptions));
 /* ROUTES */
 app.get("/", (req, res) => res.json("This is the Base route"));
 app.use("/kpi", kpiRoutes);
 app.use("/product", productRoutes);
-app.use("/transactions", transactionRoutes);
+app.use("/transaction", transactionRoutes);
 
 /* MONGOOSE */
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 
 // Immediately Invoked Function
 (async () => {

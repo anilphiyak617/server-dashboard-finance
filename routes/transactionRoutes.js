@@ -3,9 +3,9 @@ import Transaction from "../models/Transaction.js";
 
 const router = express.Router();
 
-router.get("/transaction", async (req, res) => {
+router.get("/transactions", async (req, res) => {
   try {
-    const data = await Transaction.find();
+    const data = await Transaction.find().limit(50).sort({ createdOn: -1 });
     // by default 200
     res.status(200).json(data);
 
